@@ -1,9 +1,17 @@
 {
     "version": 2,
     "builds": [
-      { "src": "next.config.mjs", "use": "@vercel/next" }
+      { "src": "next.config.js", "use": "@vercel/next" }
     ],
     "rewrites": [
-      { "source": "/(.*)", "destination": "/_next/static/$1" }
+      {
+        "source": "/api/(.*)",
+        "destination": "/api/$1"
+      },
+      {
+        "source": "/(.*)",
+        "destination": "/"
+      }
     ]
   }
+  
